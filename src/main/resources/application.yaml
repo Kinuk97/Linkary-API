@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: api
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}/${DB_DATABASE}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: true
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+  jwt:
+    key: ${JWT_KEY}
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
